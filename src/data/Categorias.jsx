@@ -1,0 +1,33 @@
+import React from 'react';
+
+export const Categorias = [
+    "Acción",
+  "Aventura",
+  "Fantasía",
+  "Drama",
+  "Histórico",
+  "Folklore",
+  "Seinen",
+  "Misterio",
+  "Suspense",
+  "Psicológico",
+  "Thriller",
+  "Sobrenatural",
+  "Comedia romántica",
+  "Slice of Life",
+  "Ecchi",
+  "Ciencia ficción",
+  "Comedia",
+  "Romance",
+  "Isekai",
+  "Harem",
+  "Escolar",
+  "Artes marciales",
+  "Fantasía oscura",
+  "Terror",
+  "Shonen",
+  "Deportes",
+  "Música",
+  "Idols",
+  "Post-apocalíptico"
+]
