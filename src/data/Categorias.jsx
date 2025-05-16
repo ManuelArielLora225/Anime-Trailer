@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const Categorias = [
+  "Todas",
     "Acción",
   "Aventura",
   "Fantasía",

@@ -1,10 +1,16 @@
 import React from 'react'
-import ListaAnime from './componentes/ListaAnimes'
+import Encabezado from './componentes/Encabezado'
+import ListaAnimes from './componentes/ListaAnimes'
+import { ProviderCategorias } from './providers/ProvidersCategorias'
+
 
 
 const Inicio = () => {
     return(
-        <ListaAnime />
+    <ProviderCategorias>
+        <Encabezado />
+        <ListaAnimes />
+    </ProviderCategorias> 
     )
 }
 

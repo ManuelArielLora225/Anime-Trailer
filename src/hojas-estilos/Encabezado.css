@@ -8,35 +8,45 @@
 }
 
 body {
-    background-color: #0a0a0a; /* Fondo negro como Otaku TV */
+    background-color: #0a0a0a; 
     color: white;
     font-family: 'Arial', sans-serif;
 }
 
-/* Contenedor principal */
-.contenedor-ListaAnime {
-    width: 100%;
-    padding: 20px;
-}
 
 /* Cabecera con logo y botón de categorías */
 .contenedor-cabecera {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos en extremos opuestos */
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px; /* Más espacio vertical para acomodar el logo más grande */
     background-color: #141414;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     width: 100%;
+    overflow: visible; /* Permite que el logo sobresalga si es necesario */
 }
 
-/* Estilos del logo */
+/* Estilos del logo mejorados */
 .imagen-logo {
-    height: 80px; /* Tamaño considerable */
+    height: 180px; /* Aumentado significativamente para un logo más grande */
+    width: auto; /* Mantiene la proporción */
     object-fit: contain;
-    mix-blend-mode: multiply; /* Ayuda a eliminar fondos blancos */
-    filter: brightness(1.1); /* Mejora la visibilidad del logo */
+    display: block; /* Asegura que se trate como bloque */
+    margin-right: 20px; /* Espacio a la derecha del logo */
+    mix-blend-mode: normal; /* Mejor visibilidad que multiply */
+    filter: brightness(1.2) contrast(1.1); /* Mejora la visibilidad del logo */
+    max-width: none; /* Asegura que no se limite por el ancho del contenedor */
+}
+
+/* Container para el logo para mejor control */
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Evita que el logo se encoja */
+    flex: 0 0 auto; /* No permite que el contenedor se encoja */
+    min-width: 200px; /* Asegura un espacio mínimo para el logo */
 }
 
 /* Contenedor del botón de categorías */
@@ -113,12 +123,13 @@ body {
 @media screen and (max-width: 768px) {
     .contenedor-cabecera {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        padding: 20px;
     }
     
     .imagen-logo {
-        margin: 0;
-        height: 60px;
+        margin: 0 auto; /* Centra el logo en móvil */
+        height: 130px; /* Tamaño aumentado para móvil, pero no tanto como en desktop */
     }
     
     .contenedor-boton-categorias {
@@ -128,6 +139,7 @@ body {
     
     .boton-categoria {
         width: 100%;
+        margin-right: 0;
     }
     
     .lista-categorias {

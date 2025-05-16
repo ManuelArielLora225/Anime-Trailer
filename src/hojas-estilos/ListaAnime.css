@@ -1,0 +1,34 @@
+/* ListaAnime.css */
+.contenedor-lista-animes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #121212;
+  max-width: 100%;
+}
+
+/* Responsive para tablets */
+@media (min-width: 768px) {
+  .contenedor-lista-animes {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Responsive para desktop */
+@media (min-width: 1200px) {
+  .contenedor-lista-animes {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .contenedor-lista-animes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+}

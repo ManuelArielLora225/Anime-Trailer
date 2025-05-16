@@ -1,45 +1,33 @@
-import React, {use, useState} from 'react'
-import Logo from '../Logos/Logo_AnimeTrailer_ParaInicio.png'
-import '../hojas-estilos/ListaAnimes.css'
+import React from 'react'
+import '../hojas-estilos/ListaAnime.css'
 import { DatosAnimes } from '../data/DatosAnimes'
-import { Categorias } from '../data/Categorias'
+import Anime from './Anime'
+import { useContextoCategorias } from '../providers/ProvidersCategorias'
 
+const ListaAnimes = () => {
 
-const ListaAnime = () => {
+    const { categoriaSeleccionada } = useContextoCategorias();
 
-    const [mostrarCategorias, setMostrarCategorias] = useState(false);
+    const animesFiltrados = DatosAnimes.filter(anime => anime.categorias.includes(categoriaSeleccionada))
 
-    return (
+    return(
 
-    <div className='contenedor-ListaAnime'>
-        
-        <div className='contenedor-cabecera'>
+        <div className='contenedor-lista-animes' >
 
-        <img src={Logo}  className='imagen-logo'/>
-
-        <div className='contenedor-boton-categorias'>
-
-        <button 
-        className='boton-categoria' 
-        onClick={() =>setMostrarCategorias(!mostrarCategorias)}
-        >Categorías ▼</button>
-
-        {mostrarCategorias &&
-            <ul className='lista-categorias'>
-                {Categorias.map((categoria, i) => (
-                    <li className='categoria' key={i}>{categoria}</li>
-                ))}
-            </ul>
-        }
-
+        {animesFiltrados.map(anime => (
+            <Anime 
+            key={anime.id}
+            id={anime.id}
+            portada={anime.portada}
+            idVideo={anime.idVideo}
+            descripcion={anime.descripcion}
+            categorias={anime.categorias}
+            />
+        ))}
+    
         </div>
-        
-
-        </div>
-
-
-    </div>
     )
+    
 }
 
-export default ListaAnime
+export default ListaAnimes
