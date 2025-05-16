@@ -1,7 +1,9 @@
 import React, {use, useState} from 'react'
 import Logo from '../Logos/Logo_AnimeTrailer_ParaInicio.png'
+import '../hojas-estilos/ListaAnimes.css'
 import { DatosAnimes } from '../data/DatosAnimes'
 import { Categorias } from '../data/Categorias'
+
 
 const ListaAnime = () => {
 
@@ -34,6 +36,7 @@ const ListaAnime = () => {
         
 
         </div>
+
 
     </div>
     )
