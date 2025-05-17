@@ -1,0 +1,58 @@
+/* Estilos generales para la galería */
+.contenedor-Anime {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  width: 200px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contenedor-Anime:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para la portada */
+.contenedor-Portada {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.Portada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.contenedor-Anime:hover .Portada {
+  transform: scale(1.05);
+}
+
+/* Estilos para el título */
+.contenedor-titulo {
+  color: white;
+  font-weight: bold;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+}
+
+/* Estilos para la galería completa */
+.galeria-anime {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #121212;
+}

@@ -1,136 +1,67 @@
-/* ListaAnime.css */
-
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Estilos para el contenedor principal de la lista de animes */
+.contenedor-lista-animes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-body {
-    background-color: #0a0a0a; /* Fondo negro como Otaku TV */
-    color: white;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Contenedor principal */
-.contenedor-ListaAnime {
-    width: 100%;
+/* Responsive para diferentes tamaños de pantalla */
+@media (max-width: 1200px) {
+  .contenedor-lista-animes {
     padding: 20px;
+    gap: 20px;
+  }
 }
 
-/* Cabecera con logo y botón de categorías */
-.contenedor-cabecera {
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos en extremos opuestos */
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #141414;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    width: 100%;
+@media (max-width: 768px) {
+  .contenedor-lista-animes {
+    padding: 15px;
+    gap: 15px;
+  }
 }
 
-/* Estilos del logo */
-.imagen-logo {
-    height: 80px; /* Tamaño considerable */
-    object-fit: contain;
-    mix-blend-mode: multiply; /* Ayuda a eliminar fondos blancos */
-    filter: brightness(1.1); /* Mejora la visibilidad del logo */
+/* Animación para cuando se cargan nuevos animes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Contenedor del botón de categorías */
-.contenedor-boton-categorias {
-    position: relative;
+.contenedor-lista-animes .contenedor-Anime {
+  animation: fadeIn 0.5s ease forwards;
 }
 
-/* Botón de categorías */
-.boton-categoria {
-    background-color: #8e44ad; /* Color morado */
-    color: white; /* Texto blanco */
-    padding: 10px 16px;
-    margin-right: 80px;
-    border: none;
-    border-radius: 4px;
-    font-size: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+/* Estado de carga mientras se filtran los animes */
+.contenedor-lista-animes.cargando {
+  min-height: 300px;
+  position: relative;
 }
 
-.boton-categoria:hover {
-    background-color: #9b59b6; /* Morado más claro al pasar el cursor */
+.contenedor-lista-animes.cargando::after {
+  content: "Cargando...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
 }
 
-/* Lista de categorías desplegable */
-.lista-categorias {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 220px;
-    max-height: 300px;
-    overflow-y: auto; /* Scroll vertical */
-    background-color: #1f1f1f;
-    border-radius: 4px;
-    margin-top: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    border: 1px solid #333;
-}
-
-/* Barra de desplazamiento personalizada */
-.lista-categorias::-webkit-scrollbar {
-    width: 8px;
-}
-
-.lista-categorias::-webkit-scrollbar-track {
-    background: #141414;
-}
-
-.lista-categorias::-webkit-scrollbar-thumb {
-    background-color: #8e44ad;
-    border-radius: 4px;
-}
-
-/* Elemento individual de categoría */
-.categoria {
-    padding: 12px 16px;
-    cursor: pointer;
-    list-style: none;
-    border-bottom: 1px solid #333;
-    transition: background-color 0.2s;
-}
-
-.categoria:hover {
-    background-color: #8e44ad;
-}
-
-.categoria:last-child {
-    border-bottom: none;
-}
-
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .contenedor-cabecera {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .imagen-logo {
-        margin: 0;
-        height: 60px;
-    }
-    
-    .contenedor-boton-categorias {
-        margin: 0;
-        width: 100%;
-    }
-    
-    .boton-categoria {
-        width: 100%;
-    }
-    
-    .lista-categorias {
-        width: 100%;
-    }
+/* Mensaje cuando no hay resultados */
+.sin-resultados {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  padding: 40px 0;
 }

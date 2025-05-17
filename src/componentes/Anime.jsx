@@ -1,4 +1,5 @@
 import React from 'react';
+import '../hojas-estilos/Anime.css'
 
 const Anime = ({id, titulo, portada, idVideo, descripcion, categorias}) => {
     return (
