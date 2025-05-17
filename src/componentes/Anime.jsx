@@ -3,12 +3,16 @@ import '../hojas-estilos/Anime.css'
 
 const Anime = ({id, titulo, portada, idVideo, descripcion, categorias}) => {
     return (
-        <div className='contenedor-Anime'>
-            <div className='contenedor-Portada'>
-                <img  className="Portada" src={portada} />
+        <div className='anime-contenedor'>
+            <div className='anime-portada-contenedor'>
+                <img 
+                 className="anime-portada" 
+                 src={portada} 
+                 alt={`Portada de ${titulo}`}
+                 />
             </div>
-            <div className='contenedor-titulo'>
-                <p className='contenedor-titulo'>{titulo}</p>
+            <div className='anime-info'>
+                <div className='anime-titulo'>{titulo}</div>
             </div>
         </div>
     )

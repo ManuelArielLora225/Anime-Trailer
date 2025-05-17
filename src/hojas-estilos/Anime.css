@@ -1,58 +1,109 @@
-/* Estilos generales para la galería */
-.contenedor-Anime {
-  display: flex;
-  flex-direction: column;
-  margin: 15px;
-  width: 200px;
-  transition: transform 0.3s ease;
+/* Anime.css - Con efecto de aparición */
+
+/* Contenedor principal del anime con animación de entrada */
+.anime-contenedor {
+  width: 200px; /* Ancho aumentado */
+  margin: 12px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
   overflow: hidden;
-  border-radius: 8px;
-  cursor: pointer;
+  background-color: transparent; /* Sin fondo */
+  animation: aparecer 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(15px);
 }
 
-.contenedor-Anime:hover {
+/* Animación de aparición */
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicar retraso escalonado basado en la posición del elemento */
+.anime-contenedor:nth-child(1) { animation-delay: 0.05s; }
+.anime-contenedor:nth-child(2) { animation-delay: 0.1s; }
+.anime-contenedor:nth-child(3) { animation-delay: 0.15s; }
+.anime-contenedor:nth-child(4) { animation-delay: 0.2s; }
+.anime-contenedor:nth-child(5) { animation-delay: 0.25s; }
+.anime-contenedor:nth-child(6) { animation-delay: 0.3s; }
+.anime-contenedor:nth-child(7) { animation-delay: 0.35s; }
+.anime-contenedor:nth-child(8) { animation-delay: 0.4s; }
+.anime-contenedor:nth-child(9) { animation-delay: 0.45s; }
+.anime-contenedor:nth-child(10) { animation-delay: 0.5s; }
+.anime-contenedor:nth-child(n+11) { animation-delay: 0.55s; }
+
+.anime-contenedor:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para la portada */
-.contenedor-Portada {
+/* Contenedor de la portada */
+.anime-portada-contenedor {
   width: 100%;
-  height: 280px;
+  height: 290px; /* Altura aumentada */
   overflow: hidden;
-  border-radius: 3px;
+  position: relative;
 }
 
-.Portada {
+/* Imagen de portada con dimensiones fijas */
+.anime-portada {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  border-radius: 6px; /* Bordes redondeados para la imagen */
 }
 
-.contenedor-Anime:hover .Portada {
+/* Efecto de zoom suave al pasar el cursor */
+.anime-contenedor:hover .anime-portada {
   transform: scale(1.05);
 }
 
-/* Estilos para el título */
-.contenedor-titulo {
-  color: white;
-  font-weight: bold;
-  padding: 10px 5px;
+/* Información del anime (título) */
+.anime-info {
+  padding: 8px 6px;
+  background-color: transparent; /* Sin fondo en el título */
   text-align: center;
-  font-size: 16px;
-  margin-top: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: transparent;
+  border-top: none; /* Sin borde */
 }
 
-/* Estilos para la galería completa */
-.galeria-anime {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: #121212;
+/* Título del anime */
+.anime-titulo {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+
+/* Diseño responsivo manteniendo proporción */
+@media (max-width: 768px) {
+  .anime-contenedor {
+    width: 170px;
+    margin: 8px;
+  }
+  
+  .anime-portada-contenedor {
+    height: 245px;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .anime-contenedor {
+    width: 140px;
+    margin: 6px;
+  }
+  
+  .anime-portada-contenedor {
+    height: 200px;
+  }
 }
