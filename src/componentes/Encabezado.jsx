@@ -22,6 +22,8 @@ const Encabezado = () => {
 
         <Link to="/"><img src={Logo}  className='imagen-logo'/></Link>
 
+        <Link to="/Favoritos"><h2>Favoritos</h2></Link>
+
         <h2>{categoriaSeleccionada}</h2>
 
         <div className='contenedor-boton-categorias'>

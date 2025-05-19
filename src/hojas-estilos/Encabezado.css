@@ -29,7 +29,12 @@
   text-align: center;
   margin: 0;
   flex-grow: 1;
+  text-decoration: none; /* Esto elimina subrayados */
+  border-bottom: none; /* Esto elimina bordes inferiores */
+  box-shadow: none; /* Esto elimina sombras que puedan parecer una línea */
 }
+
+
 
 /* Contenedor del botón de categorías a la derecha */
 .contenedor-boton-categorias {

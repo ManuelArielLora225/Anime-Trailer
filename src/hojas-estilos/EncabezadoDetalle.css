@@ -35,7 +35,7 @@ body {
 
 /* Estilos del logo mejorados con posicionamiento */
 .imagen-logo {
-    height: 600px; /* Logo más grande */
+    height: 500px; /* Logo más grande */
     width: auto;
     object-fit: contain;
     mix-blend-mode: normal;
@@ -47,75 +47,6 @@ body {
    
 }
 
-/* Contenedor del botón de categorías */
-.contenedor-boton-categorias {
-    position: relative;
-}
-
-/* Botón de categorías */
-.boton-categoria {
-    background-color: #8e44ad; /* Color morado */
-    color: white; /* Texto blanco */
-    padding: 10px 16px;
-    margin-right: 80px;
-    border: none;
-    border-radius: 4px;
-    font-size: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.boton-categoria:hover {
-    background-color: #9b59b6; /* Morado más claro al pasar el cursor */
-}
-
-/* Lista de categorías desplegable */
-.lista-categorias {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 220px;
-    max-height: 300px;
-    overflow-y: auto; /* Scroll vertical */
-    background-color: #1f1f1f;
-    border-radius: 4px;
-    margin-top: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    border: 1px solid #333;
-}
-
-/* Barra de desplazamiento personalizada */
-.lista-categorias::-webkit-scrollbar {
-    width: 8px;
-}
-
-.lista-categorias::-webkit-scrollbar-track {
-    background: #141414;
-}
-
-.lista-categorias::-webkit-scrollbar-thumb {
-    background-color: #8e44ad;
-    border-radius: 4px;
-}
-
-/* Elemento individual de categoría */
-.categoria {
-    padding: 12px 16px;
-    cursor: pointer;
-    list-style: none;
-    border-bottom: 1px solid #333;
-    transition: background-color 0.2s;
-}
-
-.categoria:hover {
-    background-color: #8e44ad;
-}
-
-.categoria:last-child {
-    border-bottom: none;
-}
 
 /* Responsive design mejorado */
 @media screen and (max-width: 768px) {
@@ -131,19 +62,5 @@ body {
         height: 80px;
         max-width: 80%;
         top: 0; /* Sin posicionamiento especial en móvil */
-    }
-    
-    .contenedor-boton-categorias {
-        margin: 0;
-        width: 100%;
-    }
-    
-    .boton-categoria {
-        width: 100%;
-        margin-right: 0;
-    }
-    
-    .lista-categorias {
-        width: 100%;
     }
 }

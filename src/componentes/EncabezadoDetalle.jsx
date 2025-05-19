@@ -13,6 +13,8 @@ const EncabezadoDetalle = () => {
 
         <Link to="/"><img src={Logo}  className='imagen-logo'/></Link>
 
+        <Link to="/Favoritos"><h2>Favoritos</h2></Link>
+
         </div>
 
     )

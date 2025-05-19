@@ -1,0 +1,94 @@
+/* EncabezadoFavoritos.css */
+
+/* Contenedor principal */
+.contenedor-cabecera-favorito {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background-color: #222;
+  height: 120px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo grande a la izquierda */
+.imagen-logo-favorito {
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  z-index: 2;
+  margin-top: -40px;
+  margin-bottom: -40px;
+}
+
+.imagen-logo-favorito:hover {
+  transform: scale(1.05);
+}
+
+/* Título "Favoritos" centrado */
+.titulo-favorito {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(142, 68, 173, 0.7);
+  text-decoration: none;
+  border-bottom: none;
+  box-shadow: none;
+  z-index: 1;
+  width: max-content;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .imagen-logo-favorito {
+    height: 150px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
+  
+  .titulo-favorito {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-cabecera-favorito {
+    padding: 15px 25px;
+    height: 100px;
+  }
+  
+  .imagen-logo-favorito {
+    height: 120px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+  }
+  
+  .titulo-favorito {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-cabecera-favorito {
+    padding: 10px 15px;
+    height: 80px;
+  }
+  
+  .imagen-logo-favorito {
+    height: 80px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+  
+  .titulo-favorito {
+    font-size: 24px;
+  }
+}

@@ -1,18 +1,17 @@
 /* Estilos para la página de detalles del anime */
 
-/* Contenedor principal */
+/* Contenedor principal - información del anime */
 .contenedor-detalle-anime {
   display: flex;
   padding: 30px;
   background-color: #2a2a2a; /* Fondo gris oscuro pero no negro */
   color: #e0e0e0;
-  min-height: 500px;
   gap: 30px;
 }
 
-/* Contenedor de la portada */
+/* Contenedor de la portada (izquierda) */
 .contendor-portada {
-  flex: 0 0 300px; /* Ancho fijo para la portada */
+  flex: 0 0 280px; /* Ancho fijo para la portada */
 }
 
 .portada {
@@ -21,9 +20,9 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Contenedor de la información */
+/* Contenedor de la información (derecha) */
 .contenedor-descripcion {
-  flex: 1;
+  flex: 0 0 60%; /* Ancho limitado para no ocupar todo el espacio */
   display: flex;
   flex-direction: column;
   padding: 10px 0;
@@ -50,27 +49,74 @@
 .categorias {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 15px;
 }
 
 /* Estilo para cada categoría individual */
 .categorias span {
   background-color: #444;
   color: white;
-  padding: 6px 12px;
+  padding: 8px 15px;
   border-radius: 6px;
   font-size: 14px;
   display: inline-block;
-  margin-right: 8px;
-  margin-bottom: 8px;
   transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .categorias span:hover {
   background-color: #555;
 }
 
+.contenedor-favorito {
+  margin: 40px;
+}
+
+.boton-favorito{
+    background-color: #8e44ad; /* Color morado */
+    color: white; /* Texto blanco */
+    padding: 10px 16px;
+    margin-right: 80px;
+    border: none;
+    border-radius: 4px;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.boton-favorito:hover{
+   background-color: #9b59b6;
+}
+
+/* Contenedor del trailer (debajo, en grande) */
+.contenedor-trailer-youtube {
+  width: 100%;
+  height: 560px; /* Altura grande para el trailer */
+  margin: 0 auto;
+  padding: 0 30px 30px 30px;
+  background-color: #2a2a2a;
+}
+
+.contenedor-trailer-youtube iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
 /* Estilos responsivos */
+@media (max-width: 992px) {
+  .contenedor-descripcion {
+    flex: 1; /* En pantallas medianas, permite que tome más espacio */
+  }
+  
+  .contenedor-trailer-youtube {
+    height: 400px;
+  }
+}
+
 @media (max-width: 768px) {
   .contenedor-detalle-anime {
     flex-direction: column;
@@ -79,13 +125,23 @@
   
   .contendor-portada {
     flex: initial;
-    margin-bottom: 20px;
+    width: 100%;
     max-width: 250px;
     align-self: center;
+    margin: 0 auto 20px;
+  }
+  
+  .contenedor-descripcion {
+    width: 100%;
   }
   
   .titulo {
     font-size: 28px;
     text-align: center;
+  }
+  
+  .contenedor-trailer-youtube {
+    height: 300px;
+    padding: 0 20px 20px 20px;
   }
 }
