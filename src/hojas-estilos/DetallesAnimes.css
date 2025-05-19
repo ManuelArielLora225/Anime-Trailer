@@ -1,0 +1,91 @@
+/* Estilos para la página de detalles del anime */
+
+/* Contenedor principal */
+.contenedor-detalle-anime {
+  display: flex;
+  padding: 30px;
+  background-color: #2a2a2a; /* Fondo gris oscuro pero no negro */
+  color: #e0e0e0;
+  min-height: 500px;
+  gap: 30px;
+}
+
+/* Contenedor de la portada */
+.contendor-portada {
+  flex: 0 0 300px; /* Ancho fijo para la portada */
+}
+
+.portada {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor de la información */
+.contenedor-descripcion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+/* Título del anime */
+.titulo {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Descripción del anime */
+.descripcion {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #d0d0d0;
+}
+
+/* Contenedor de categorías */
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Estilo para cada categoría individual */
+.categorias span {
+  background-color: #444;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.categorias span:hover {
+  background-color: #555;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .contenedor-detalle-anime {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .contendor-portada {
+    flex: initial;
+    margin-bottom: 20px;
+    max-width: 250px;
+    align-self: center;
+  }
+  
+  .titulo {
+    font-size: 28px;
+    text-align: center;
+  }
+}

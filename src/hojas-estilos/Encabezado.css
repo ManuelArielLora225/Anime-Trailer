@@ -1,148 +1,132 @@
-/* ListaAnime.css modificado */
+/* Estilos para el encabezado principal con menú desplegable */
 
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #0a0a0a; /* Fondo negro como Otaku TV */
-    color: white;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Contenedor principal */
-.contenedor-ListaAnime {
-    width: 100%;
-    padding: 20px;
-}
-
-/* Cabecera con logo y botón de categorías - altura fija */
 .contenedor-cabecera {
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos en extremos opuestos */
-    align-items: center;
-    padding: 10px 20px; /* Reducido para mantener tamaño original */
-    background-color: #141414;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    height: 100px; /* Altura fija para el encabezado */
-    overflow: visible; /* Permite que el logo se extienda fuera del contenedor */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background-color: #222;
+  height: 70px;
+  position: relative;
 }
 
-/* Estilos del logo mejorados con posicionamiento */
+/* Logo a la izquierda */
 .imagen-logo {
-    height: 230px; /* Logo más grande */
-    width: auto;
-    object-fit: contain;
-    mix-blend-mode: normal;
-    filter: brightness(1.2) contrast(1.1);
-    margin-right: 20px;
-    max-width: 40%;
-    position: relative; /* Permite que el logo se posicione relativamente */
-   
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* Contenedor del botón de categorías */
+.imagen-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Categoría seleccionada en el centro */
+.contenedor-cabecera h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Contenedor del botón de categorías a la derecha */
 .contenedor-boton-categorias {
-    position: relative;
+  position: relative;
+  margin-right: 30px;
 }
 
-/* Botón de categorías */
+/* Estilo del botón de categorías */
 .boton-categoria {
-    background-color: #8e44ad; /* Color morado */
-    color: white; /* Texto blanco */
-    padding: 10px 16px;
-    margin-right: 80px;
-    border: none;
-    border-radius: 4px;
-    font-size: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
 }
 
 .boton-categoria:hover {
-    background-color: #9b59b6; /* Morado más claro al pasar el cursor */
+  background-color: #555;
 }
 
-/* Lista de categorías desplegable */
+/* Lista desplegable de categorías */
 .lista-categorias {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 220px;
-    max-height: 300px;
-    overflow-y: auto; /* Scroll vertical */
-    background-color: #1f1f1f;
-    border-radius: 4px;
-    margin-top: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    border: 1px solid #333;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+  animation: aparecer 0.2s ease-out;
 }
 
-/* Barra de desplazamiento personalizada */
-.lista-categorias::-webkit-scrollbar {
-    width: 8px;
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.lista-categorias::-webkit-scrollbar-track {
-    background: #141414;
-}
-
-.lista-categorias::-webkit-scrollbar-thumb {
-    background-color: #8e44ad;
-    border-radius: 4px;
-}
-
-/* Elemento individual de categoría */
+/* Elementos de la lista de categorías */
 .categoria {
-    padding: 12px 16px;
-    cursor: pointer;
-    list-style: none;
-    border-bottom: 1px solid #333;
-    transition: background-color 0.2s;
+  padding: 10px 15px;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .categoria:hover {
-    background-color: #8e44ad;
+  background-color: #444;
+}
+
+.categoria:first-child {
+  border-radius: 8px 8px 0 0;
 }
 
 .categoria:last-child {
-    border-bottom: none;
+  border-radius: 0 0 8px 8px;
 }
 
-/* Responsive design mejorado */
-@media screen and (max-width: 768px) {
-    .contenedor-cabecera {
-        flex-direction: column;
-        gap: 15px;
-        height: auto; /* En móvil permitimos altura automática */
-        padding: 15px;
-    }
-    
-    .imagen-logo {
-        margin: 0 auto 10px;
-        height: 80px;
-        max-width: 80%;
-        top: 0; /* Sin posicionamiento especial en móvil */
-    }
-    
-    .contenedor-boton-categorias {
-        margin: 0;
-        width: 100%;
-    }
-    
-    .boton-categoria {
-        width: 100%;
-        margin-right: 0;
-    }
-    
-    .lista-categorias {
-        width: 100%;
-    }
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .contenedor-cabecera {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 15px;
+  }
+
+  .imagen-logo {
+    height: 30px;
+  }
+
+  .contenedor-cabecera h2 {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .contenedor-boton-categorias {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .lista-categorias {
+    width: 160px;
+  }
 }

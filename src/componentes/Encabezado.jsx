@@ -3,6 +3,7 @@ import Logo from '../Logos/Logo_AnimeTrailer_ParaInicio.png'
 import '../hojas-estilos/Encabezado.css'
 import { Categorias } from '../data/Categorias'
 import { useContextoCategoria } from '../providers/ContextoCategorias'
+import { Link } from 'react-router-dom'
 
 
 const Encabezado = () => {
@@ -19,7 +20,7 @@ const Encabezado = () => {
         
         <div className='contenedor-cabecera'>
 
-        <img src={Logo}  className='imagen-logo'/>
+        <Link to="/"><img src={Logo}  className='imagen-logo'/></Link>
 
         <h2>{categoriaSeleccionada}</h2>
 

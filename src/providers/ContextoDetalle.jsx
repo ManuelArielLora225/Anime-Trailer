@@ -1,4 +1,4 @@
-import React, { useState, useContext, Children} from 'react'
+import React, { useState, useContext} from 'react'
 
 export const ContextoDetalles = React.createContext();
 
@@ -14,5 +14,5 @@ export const ProviderDetalles = ({children}) => {
     )
 }
 
-export const useContextoDetalles = () => {useState(ContextoDetalles)};
+export const useContextoDetalles = () => useContext(ContextoDetalles);
 
